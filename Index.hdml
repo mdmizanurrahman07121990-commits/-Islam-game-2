@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>নূরানী সফর: ফাতেমা (রাঃ) ও গোলাম-ই-রসূল</title>
+    <!-- Tailwind CSS CDN for responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bengali Fonts: Hind Siliguri & Noto Serif Bengali -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --emerald-deep: #043927;
+            --emerald-mid: #0a5c36;
+            --gold-bright: #d4af37;
+            --gold-light: #f3e5ab;
+            --cream-bg: #fdfbf7;
+        }
+
+        * {
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: var(--emerald-deep);
+            color: var(--cream-bg);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image:
+                radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.12) 0%, transparent 40%);
+        }
+
+        .serif-bn {
+            font-family: 'Noto Serif Bengali', serif;
+        }
+
+        /* Islamic geometric pattern background */
+        .islamic-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23d4af37' stroke-width='0.6' stroke-opacity='0.14'%3E%3Cpath d='M30 0l7.5 22.5L60 30l-22.5 7.5L30 60l-7.5-22.5L0 30l22.5-7.5z'/%3E%3Ccircle cx='30' cy='30' r='12'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Gold border card styling */
+        .gold-card {
+            background: linear-gradient(145deg, rgba(6, 78, 59, 0.92), rgba(2, 44, 34, 0.96));
+            border: 1.5px solid rgba(212, 175, 55, 0.45);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45), inset 0 0 20px rgba(212, 175, 55, 0.08);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #d4af37 0%, #b48a1e 100%);
+            color: #022c22;
+            font-weight: 700;
+            border: 1px solid #fef08a;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+            transition: all 0.2s ease;
+        }
+
+        .btn-gold:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+            filter: brightness(1.06);
+        }
+
+        .btn-gold:active:not(:disabled) {
+            transform: translateY(1px);
+        }
+
+        .btn-emerald {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: #ffffff;
+            font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .btn-emerald:hover:not(:disabled) {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        @keyframes swing {
+            0%, 100% { transform: rotate(-4deg); }
+            50% { transform: rotate(4deg); }
+        }
+
+        .lantern-swing {
+            transform-origin: top center;
+            animation: swing 4s ease-in-out infinite;
+        }
+
+        @keyframes floatGlow {
+            0%, 100% { transform: translateY(0px); filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4)); }
+            50% { transform: translateY(-6px); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.7)); }
+        }
+
+        .float-icon {
+            animation: floatGlow 3s ease-in-out infinite;
+        }
+
+        #gameCanvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+            background: linear-gradient(180deg, #022c22 0%, #064e3b 55%, #065f46 100%);
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #022c22; }
+        ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 10px; }
+    </style>
+</head>
+<body class="islamic-pattern p-2 sm:p-4">
+
+    <!-- Top header with wallet badge, home navigation, and audio toggle -->
+    <header class="w-full max-w-3xl flex items-center justify-between mb-3 px-2">
+        <div class="flex items-center gap-2">
+            <div class="w-9 h-9 rounded-full bg-amber-400/20 border border-amber-400/50 flex items-center justify-center text-amber-300 shadow">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/>
+                </svg>
+            </div>
+            <div>
+                <h1 class="text-base sm:text-xl font-bold text-amber-300 serif-bn leading-tight">নূরানী সফর</h1>
+                <p class="text-[11px] sm:text-xs text-emerald-200">ফাতেমা (রাঃ) ও গোলাম-ই-রসূল আদর্শ</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <button onclick="openRewardsShop()" class="px-2.5 py-1.5 rounded-xl bg-amber-500/20 border border-amber-400/50 text-amber-200 text-xs sm:text-sm font-bold hover:bg-amber-500/30 transition flex items-center gap-1" title="রিওয়ার্ড ও আনলক শপ">
+                <span>🪙</span>
+                <span id="totalWalletDisplay">০</span>
+            </button>
+            <button id="homeBtn" onclick="showScreen('startScreen')" class="hidden px-3 py-1.5 rounded-xl bg-emerald-900/80 border border-amber-400/40 text-amber-200 text-xs sm:text-sm hover:bg-emerald-800 transition">
+                🏠 মূল পাতা
+            </button>
+            <button id="soundToggleBtn" onclick="toggleSound()" class="p-2 rounded-xl bg-emerald-900/80 border border-amber-400/40 text-amber-300 hover:bg-emerald-800 transition" title="শব্দ চালু/বন্ধ">
+                <span id="soundIcon">🔊</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main application container -->
+    <main class="w-full max-w-3xl relative">
+
+        <!-- 1. Start Screen -->
+        <section id="startScreen" class="gold-card rounded-3xl p-5 sm:p-8 text-center relative overflow-hidden">
+            <!-- Hanging lanterns -->
+            <div class="hidden sm:block absolute top-0 left-8 lantern-swing text-amber-300/70">
+                <svg width="32" height="65" viewBox="0 0 32 65" fill="none">
+                    <line x1="16" y1="0" x2="16" y2="20" stroke="#d4af37" stroke-width="1.5"/>
+                    <path d="M10 20H22L25 32L20 50H12L7 32L10 20Z" fill="rgba(212,175,55,0.25)" stroke="#d4af37" stroke-width="1.5"/>
+                    <circle cx="16" cy="35" r="4" fill="#fef08a"/>
+                </svg>
+            </div>
+            <div class="hidden sm:block absolute top-0 right-8 lantern-swing text-amber-300/70" style="animation-delay: 1.5s;">
+                <svg width="32" height="65" viewBox="0 0 32 65" fill="none">
+                    <line x1="16" y1="0" x2="16" y2="20" stroke="#d4af37" stroke-width="1.5"/>
+                    <path d="M10 20H22L25 32L20 50H12L7 32L10 20Z" fill="rgba(212,175,55,0.25)" stroke="#d4af37" stroke-width="1.5"/>
+                    <circle cx="16" cy="35" r="4" fill="#fef08a"/>
+                </svg>
+            </div>
+
+            <div class="inline-block px-4 py-1 rounded-full bg-amber-400/15 border border-amber-400/40 text-amber-300 text-xs sm:text-sm mb-3">
+                بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم • বিসমিল্লাহির রাহমানির রাহিম
+            </div>
+
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 rounded-2xl bg-gradient-to-br from-amber-300/20 to-emerald-600/30 border border-amber-400/50 flex items-center justify-center float-icon">
+                <svg class="w-10 h-10 sm:w-12 sm:h-12 text-amber-300" viewBox="0 0 64 64" fill="currentColor">
+                    <path d="M32 6c-1.5 3-3 5-3 7 0 1.7 1.3 3 3 3s3-1.3 3-3c0-2-1.5-4-3-7zm0 12c-11 0-18 8-18 18v4h36v-4c0-10-7-18-18-18zM10 44v14h10V48c0-2.2 1.8-4 4-4s4 1.8 4 4v10h8V48c0-2.2 1.8-4 4-4s4 1.8 4 4v10h10V44H10z"/>
+                </svg>
+            </div>
+
+            <h2 class="text-2xl sm:text-4xl font-bold text-amber-300 serif-bn mb-2">
+                ফাতেমা (রাঃ) ও গোলাম-ই-রসূল
+            </h2>
+            <p class="text-xs sm:text-base text-emerald-100 max-w-xl mx-auto mb-5 leading-relaxed">
+                হযরত ফাতেমা যাহরা (রাঃ)-এর পর্দা, শালীনতা ও সরল জীবনযাপন এবং রাসূলুল্লাহ (সাঃ)-এর সুন্নাহ ও আদব শেখার একটি আনন্দময় শিক্ষামূলক সফর।
+            </p>
+
+            <!-- Mode & Challenge Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-w-2xl mx-auto mb-5 text-left">
+                <!-- Mode 1 -->
+                <div class="p-4 rounded-2xl bg-emerald-950/75 border border-amber-400/30 hover:border-amber-400 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-1.5">
+                            <span class="text-2xl">🕌</span>
+                            <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-700/60 text-emerald-200">অ্যাডভেঞ্চার গেম</span>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-bold text-amber-300 mb-1">১. পর্দা ও শালীন পোশাক সফর</h3>
+                        <p class="text-xs text-emerald-100/90 mb-3">
+                            শালীন ইসলামিক পোশাক (কামিজ, ওড়না, পাঞ্জাবি, টুপি) এবং সৎগুণ সংগ্রহ করুন; অহংকার ও অপচয় এড়িয়ে চলুন।
+                        </p>
+                    </div>
+                    <button onclick="startAdventureMode()" class="btn-gold w-full py-2 rounded-xl text-xs sm:text-sm">
+                        ▶ সফর শুরু করুন
+                    </button>
+                </div>
+
+                <!-- Mode 2 -->
+                <div class="p-4 rounded-2xl bg-emerald-950/75 border border-amber-400/30 hover:border-amber-400 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-1.5">
+                            <span class="text-2xl">📖</span>
+                            <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-amber-600/40 text-amber-200">জ্ঞান ও কুইজ</span>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-bold text-amber-300 mb-1">২. ফাতেমা (রাঃ) ও সিরাত কুইজ</h3>
+                        <p class="text-xs text-emerald-100/90 mb-3">
+                            খাতুনে জান্নাত হযরত ফাতেমা (রাঃ)-এর জীবনাদর্শ, হায়া ও পর্দা এবং নবীজী (সাঃ)-এর সুন্নাহ বিষয়ক কুইজ।
+                        </p>
+                    </div>
+                    <button onclick="startQuizMode()" class="btn-emerald w-full py-2 rounded-xl text-xs sm:text-sm">
+                        ✨ কুইজ খেলুন
+                    </button>
+                </div>
+
+                <!-- Challenge 1 -->
+                <div class="p-4 rounded-2xl bg-emerald-950/75 border border-amber-400/40 hover:border-amber-300 transition flex flex-col justify-between relative overflow-hidden">
+                    <span class="absolute top-2 right-2 text-[10px] bg-amber-400 text-emerald-950 font-bold px-2 py-0.5 rounded-full">নতুন চ্যালেঞ্জ</span>
+                    <div>
+                        <div class="flex items-center justify-between mb-1.5">
+                            <span class="text-2xl">🌙</span>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-bold text-amber-300 mb-1">৩. দৈনিক সুন্নাহ ও আমল চ্যালেঞ্জ</h3>
+                        <p class="text-xs text-emerald-100/90 mb-3">
+                            প্রতিদিনের বিশেষ সুন্নাহ ও নেক আমলের লক্ষ্য পূরণ করে বোনাস ৫০ কয়েন রিওয়ার্ড জিতে নিন!
+                        </p>
+                    </div>
+                    <button onclick="openDailyChallenge()" class="btn-gold w-full py-2 rounded-xl text-xs sm:text-sm">
+                        🎯 আজকের চ্যালেঞ্জ দেখুন
+                    </button>
+                </div>
+
+                <!-- Challenge 2 -->
+                <div class="p-4 rounded-2xl bg-emerald-950/75 border border-amber-400/40 hover:border-amber-300 transition flex flex-col justify-between relative overflow-hidden">
+                    <span class="absolute top-2 right-2 text-[10px] bg-emerald-400 text-emerald-950 font-bold px-2 py-0.5 rounded-full">নতুন চ্যালেঞ্জ</span>
+                    <div>
+                        <div class="flex items-center justify-between mb-1.5">
+                            <span class="text-2xl">🧩</span>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-bold text-amber-300 mb-1">৪. হাদিস ও আদব জোড়া মেলানো</h3>
+                        <p class="text-xs text-emerald-100/90 mb-3">
+                            ইসলামিক আদব ও নবীজী (সাঃ)-এর বাণীর সঠিক অর্থ মিলিয়ে আপনার জ্ঞান যাচাই করুন।
+                        </p>
+                    </div>
+                    <button onclick="startMatchChallenge()" class="btn-emerald w-full py-2 rounded-xl text-xs sm:text-sm">
+                        🧩 পাজল খেলুন
+                    </button>
+                </div>
+            </div>
+
+            <!-- Rewards shop & video gallery buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-2.5 mb-4">
+                <button onclick="openRewardsShop()" class="px-4 py-2 rounded-xl bg-amber-500/20 border border-amber-400/50 text-amber-200 text-xs sm:text-sm font-semibold hover:bg-amber-500/30 transition">
+                    🎁 রিওয়ার্ড ও পোশাক আনলক শপ
+                </button>
+                <button onclick="openVideoGallery()" class="px-4 py-2 rounded-xl bg-emerald-800/80 border border-amber-400/40 text-emerald-100 text-xs sm:text-sm font-semibold hover:bg-emerald-700 transition">
+                    🎬 ফাতেমা (রাঃ) ও গোলাম-ই-রসূল ভিডিও
+                </button>
+            </div>
+
+            <!-- How to play toggle -->
+            <button onclick="toggleHowToPlay()" class="text-xs sm:text-sm text-amber-300 underline hover:text-amber-200">
+                ℹ️ খেলার নিয়মাবলী ও উদ্দেশ্য দেখুন
+            </button>
+
+            <div id="howToPlayBox" class="hidden mt-4 p-4 rounded-2xl bg-emerald-950/90 border border-amber-400/30 text-left text-xs sm:text-sm text-emerald-100 space-y-2">
+                <p class="font-bold text-amber-300">📌 খেলার নিয়মাবলী:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li><strong>মুমিন পথিক (চরিত্র):</strong> আপনি একজন জ্ঞান অন্বেষণকারী শিক্ষার্থী (গোলাম-ই-রসূল)।</li>
+                    <li><strong>সংগ্রহ করুন:</strong> ইসলামিক কামিজ 👗, ওড়না/হিজাব 🧕, পাঞ্জাবি 👕, টুপি 🧢, সবর 🌿, দয়া 💛, এবং দান-সদকা 🪙।</li>
+                    <li><strong>এড়িয়ে চলুন (-১ জীবন):</strong> অহংকার 🔥 এবং অপচয় 💸।</li>
+                    <li><strong>রিওয়ার্ড সিস্টেম:</strong> খেলা ও চ্যালেঞ্জ জিতে অর্জিত কয়েন দিয়ে শপ থেকে নতুন নূরানী পোশাক ও আভা আনলক করুন।</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 2. Adventure Mode Screen -->
+        <section id="adventureScreen" class="hidden gold-card rounded-3xl p-3 sm:p-5">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3 px-1">
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <div class="px-3 py-1 rounded-xl bg-emerald-950/80 border border-amber-400/30 text-xs sm:text-sm">
+                        <span class="text-emerald-300">ধাপ:</span>
+                        <span id="levelDisplay" class="font-bold text-amber-300">১</span>
+                    </div>
+                    <div class="px-3 py-1 rounded-xl bg-emerald-950/80 border border-amber-400/30 text-xs sm:text-sm">
+                        <span class="text-emerald-300">নেকী/স্কোর:</span>
+                        <span id="scoreDisplay" class="font-bold text-amber-300">০</span> / <span id="targetScoreDisplay" class="text-amber-200">১০০</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <div id="livesDisplay" class="px-3 py-1 rounded-xl bg-emerald-950/80 border border-amber-400/30 text-xs sm:text-sm tracking-wider">
+                        ❤️❤️❤️
+                    </div>
+                    <button onclick="togglePause()" id="pauseBtn" class="px-2.5 py-1 rounded-xl bg-amber-500/20 border border-amber-400/40 text-amber-200 text-xs sm:text-sm">
+                        ⏸ বিরতি
+                    </button>
+                </div>
+            </div>
+
+            <!-- Checklist badges -->
+            <div class="grid grid-cols-4 gap-1.5 sm:gap-2 mb-3 text-center text-[11px] sm:text-xs">
+                <div id="badge-kameez" class="p-1.5 rounded-xl bg-emerald-950/60 border border-emerald-700/50 opacity-50 transition">
+                    👗 লম্বা কামিজ
+                </div>
+                <div id="badge-hijab" class="p-1.5 rounded-xl bg-emerald-950/60 border border-emerald-700/50 opacity-50 transition">
+                    🧕 ওড়না/পর্দা
+                </div>
+                <div id="badge-panjabi" class="p-1.5 rounded-xl bg-emerald-950/60 border border-emerald-700/50 opacity-50 transition">
+                    👕 পাঞ্জাবি-টুপি
+                </div>
+                <div id="badge-virtue" class="p-1.5 rounded-xl bg-emerald-950/60 border border-emerald-700/50 opacity-50 transition">
+                    ✨ সবর ও দয়া
+                </div>
+            </div>
+
+            <!-- Canvas area -->
+            <div class="relative w-full h-[360px] sm:h-[420px] rounded-2xl overflow-hidden border-2 border-amber-400/40 shadow-inner">
+                <canvas id="gameCanvas"></canvas>
+                <div id="floatingToast" class="pointer-events-none absolute top-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-emerald-950/90 border border-amber-400 text-amber-200 text-xs sm:text-sm font-medium opacity-0 transition-opacity duration-300 whitespace-nowrap shadow-lg">
+                    মাশাআল্লাহ! শালীন পোশাক সংগ্রহ হয়েছে
+                </div>
+                <div id="pauseOverlay" class="hidden absolute inset-0 bg-emerald-950/85 backdrop-blur-sm flex flex-col items-center justify-center p-4 text-center">
+                    <h3 class="text-2xl font-bold text-amber-300 mb-2">খেলা বিরতিতে আছে</h3>
+                    <p class="text-sm text-emerald-200 mb-4">পুনরায় নূরানী সফর শুরু করতে নিচের বাটনে চাপুন</p>
+                    <button onclick="togglePause()" class="btn-gold px-6 py-2.5 rounded-xl">▶ খেলা চালিয়ে যান</button>
+                </div>
+            </div>
+
+            <!-- Touch controls below canvas -->
+            <div class="mt-3 flex items-center justify-between gap-4 px-2">
+                <button id="leftTouchBtn" class="flex-1 py-3.5 rounded-2xl bg-emerald-900/90 active:bg-amber-500 active:text-emerald-950 border border-amber-400/40 text-amber-300 font-bold text-lg shadow-md transition flex items-center justify-center gap-2">
+                    ⬅️ বামে
+                </button>
+                <button id="rightTouchBtn" class="flex-1 py-3.5 rounded-2xl bg-emerald-900/90 active:bg-amber-500 active:text-emerald-950 border border-amber-400/40 text-amber-300 font-bold text-lg shadow-md transition flex items-center justify-center gap-2">
+                    ডানে ➡️
+                </button>
+            </div>
+        </section>
+
+        <!-- 3. Quiz Mode Screen -->
+        <section id="quizScreen" class="hidden gold-card rounded-3xl p-5 sm:p-8">
+            <div class="flex items-center justify-between mb-4 pb-3 border-b border-amber-400/20">
+                <div>
+                    <span class="text-xs text-amber-300 uppercase tracking-wider">ইসলামিক জ্ঞান ও আদব</span>
+                    <h3 class="text-lg sm:text-xl font-bold text-white serif-bn">হযরত ফাতেমা (রাঃ) ও গোলাম-ই-রসূল কুইজ</h3>
+                </div>
+                <div class="text-right">
+                    <div class="text-xs text-emerald-300">প্রশ্ন <span id="qNumber">১</span> / <span id="qTotal">৭</span></div>
+                    <div class="text-sm font-bold text-amber-300">স্কোর: <span id="quizScore">০</span></div>
+                </div>
+            </div>
+
+            <div id="quizCard" class="space-y-4">
+                <div class="p-4 sm:p-5 rounded-2xl bg-emerald-950/80 border border-amber-400/30">
+                    <p id="questionText" class="text-base sm:text-lg font-semibold text-amber-100 leading-relaxed">
+                        প্রশ্ন লোড হচ্ছে...
+                    </p>
+                </div>
+
+                <div id="optionsContainer" class="grid grid-cols-1 gap-3"></div>
+
+                <div id="quizFeedbackBox" class="hidden p-4 rounded-2xl bg-amber-950/40 border border-amber-400/50 text-sm text-amber-100 space-y-2">
+                    <p id="feedbackTitle" class="font-bold text-base"></p>
+                    <p id="feedbackExplanation" class="text-emerald-100 leading-relaxed"></p>
+                    <div class="pt-2 flex justify-end">
+                        <button onclick="nextQuestion()" class="btn-gold px-5 py-2 rounded-xl text-sm">
+                            পরবর্তী প্রশ্ন ➔
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3a. Daily Sunnah Challenge Screen -->
+        <section id="dailyChallengeScreen" class="hidden gold-card rounded-3xl p-5 sm:p-8">
+            <div class="text-center mb-5">
+                <span class="text-4xl">🌙✨</span>
+                <h2 class="text-2xl font-bold text-amber-300 serif-bn mt-2">দৈনিক সুন্নাহ ও আমল চ্যালেঞ্জ</h2>
+                <p class="text-xs sm:text-sm text-emerald-200 mt-1">আজকের ৩টি সুন্নাহ ভিত্তিক লক্ষ্য পূরণ করে ৫০ কয়েন বোনাস সংগ্রহ করুন!</p>
+            </div>
+
+            <div id="dailyTasksList" class="space-y-3 mb-6"></div>
+
+            <div class="text-center">
+                <button id="claimDailyBtn" onclick="claimDailyReward()" class="btn-gold px-6 py-3 rounded-xl text-sm sm:text-base w-full sm:w-auto">
+                    🎁 বোনাস ৫০ কয়েন সংগ্রহ করুন
+                </button>
+            </div>
+        </section>
+
+        <!-- 3b. Hadith & Adab Pair-Matching Challenge Screen -->
+        <section id="matchChallengeScreen" class="hidden gold-card rounded-3xl p-5 sm:p-8">
+            <div class="flex items-center justify-between mb-4 pb-3 border-b border-amber-400/20">
+                <div>
+                    <span class="text-xs text-amber-300">বিশেষ চ্যালেঞ্জ</span>
+                    <h3 class="text-lg sm:text-xl font-bold text-white serif-bn">🧩 হাদিস ও আদব জোড়া মেলানো</h3>
+                </div>
+                <div class="text-sm font-bold text-amber-300">
+                    মিল হয়েছে: <span id="matchCountDisplay">০</span> / ৪
+                </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-emerald-100 mb-4">
+                বাম পাশের ইসলামিক আদব/শব্দের সাথে ডান পাশের সঠিক অর্থ বা শিক্ষাটি ট্যাপ করে মেলান:
+            </p>
+
+            <div class="grid grid-cols-2 gap-3 sm:gap-4" id="matchGrid">
+                <div id="matchLeftCol" class="space-y-2.5"></div>
+                <div id="matchRightCol" class="space-y-2.5"></div>
+            </div>
+
+            <div id="matchStatusMsg" class="mt-4 text-center text-sm font-semibold text-amber-300 min-h-[24px]"></div>
+        </section>
+
+        <!-- 3c. Rewards & Outfit Unlock Shop Screen -->
+        <section id="rewardsShopScreen" class="hidden gold-card rounded-3xl p-5 sm:p-8">
+            <div class="flex items-center justify-between mb-4 pb-3 border-b border-amber-400/20">
+                <div>
+                    <span class="text-xs text-amber-300">অর্জিত নেকী কয়েন ব্যবহার করুন</span>
+                    <h3 class="text-lg sm:text-xl font-bold text-white serif-bn">🎁 নূরানী রিওয়ার্ড ও পোশাক শপ</h3>
+                </div>
+                <div class="px-3 py-1 rounded-xl bg-amber-500/20 border border-amber-400 text-amber-300 font-bold text-sm">
+                    🪙 <span id="shopWalletDisplay">০</span> কয়েন
+                </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-emerald-100 mb-4">
+                গেম খেলে অর্জিত কয়েন দিয়ে আপনার অ্যাডভেঞ্চার চরিত্রের (মুমিন পথিক) জন্য নতুন শালীন পোশাক ও নূরানী আভা আনলক করুন!
+            </p>
+
+            <div id="shopItemsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5"></div>
+            <div id="shopFeedbackNotice" class="hidden mt-4 p-3 rounded-xl bg-red-950/80 border border-red-400/50 text-red-200 text-xs sm:text-sm text-center"></div>
+        </section>
+
+        <!-- 3d. Video Gallery Screen -->
+        <section id="videoGalleryScreen" class="hidden gold-card rounded-3xl p-5 sm:p-8">
+            <div class="text-center mb-4">
+                <span class="text-3xl">🎬</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-amber-300 serif-bn mt-1">ফাতেমা (রাঃ) ও গোলাম-ই-রসূল ভিডিও</h3>
+                <p class="text-xs sm:text-sm text-emerald-200 mt-1">
+                    আমাদের চ্যানেলের সর্বশেষ ইসলামিক ভিডিও ও গেম আপডেট সরাসরি এখান থেকেই দেখুন!
+                </p>
+            </div>
+
+            <div class="aspect-video w-full rounded-2xl overflow-hidden border-2 border-amber-400/40 bg-emerald-950 mb-4 shadow-lg">
+                <iframe
+                    class="w-full h-full"
+                    src="https://www.youtube-nocookie.com/embed/l_uXR4vDX04?rel=0&playsinline=1"
+                    title="ইসলাম গেম ভিডিও"
+                    frameborder="0"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- সরাসরি ইউটিউবে দেখার বাটন (প্রিভিউ বা এমবেড ব্লক থাকলে কাজ করবে) -->
+            <div class="mb-4 text-center">
+                <a href="https://youtube.com/shorts/l_uXR4vDX04" target="_blank" rel="noopener noreferrer" class="btn-gold inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm">
+                    <span>▶️</span>
+                    <span>সরাসরি YouTube অ্যাপে ভিডিওটি দেখুন</span>
+                </a>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-emerald-950/80 border border-amber-400/30 text-xs sm:text-sm text-emerald-100 text-center">
+                নতুন নতুন ভিডিও ও শিক্ষামূলক গল্প পেতে আমাদের ইউটিউব চ্যানেল <strong>"ইসলাম গেম"</strong> সাবস্ক্রাইব করে সাথেই থাকুন।
+            </div>
+        </section>
+
+        <!-- 4. Result Screen -->
+        <section id="resultScreen" class="hidden gold-card rounded-3xl p-6 sm:p-8 text-center">
+            <div id="resultIcon" class="text-5xl mb-3 float-icon">🌟</div>
+            <h2 id="resultTitle" class="text-2xl sm:text-3xl font-bold text-amber-300 serif-bn mb-2">
+                মাশাআল্লাহ! সফর সম্পন্ন হয়েছে
+            </h2>
+            <p id="resultSubtitle" class="text-sm sm:text-base text-emerald-100 mb-4">
+                আপনি সফলভাবে শালীনতা ও সৎগুণ অর্জন করেছেন।
+            </p>
+
+            <div class="inline-flex items-center gap-4 px-6 py-3 rounded-2xl bg-emerald-950/80 border border-amber-400/40 mb-5">
+                <div>
+                    <div class="text-xs text-emerald-300">অর্জিত কয়েন</div>
+                    <div id="finalScoreText" class="text-2xl font-bold text-amber-300">১০০</div>
+                </div>
+                <div class="h-8 w-[1px] bg-amber-400/30"></div>
+                <div>
+                    <div class="text-xs text-emerald-300">অর্জন</div>
+                    <div id="finalStarsText" class="text-xl">⭐⭐⭐</div>
+                </div>
+            </div>
+
+            <div class="max-w-xl mx-auto p-4 sm:p-5 rounded-2xl bg-emerald-950/90 border border-amber-400/40 text-left mb-6">
+                <div class="flex items-center gap-2 text-amber-300 font-bold text-sm mb-1.5">
+                    <span>📜 আজকের শিক্ষা ও হাদিস:</span>
+                </div>
+                <p id="moralLessonText" class="text-xs sm:text-sm text-emerald-100 leading-relaxed italic">
+                    "লজ্জাশীলতা (হায়া) ঈমানের অন্যতম প্রধান অঙ্গ।" — (সহীহ বুখারী ও মুসলিম)
+                </p>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <button id="nextActionBtn" onclick="handleNextAction()" class="btn-gold px-6 py-3 rounded-xl text-sm sm:text-base">
+                    পরবর্তী ধাপ ➔
+                </button>
+                <button onclick="showScreen('startScreen')" class="btn-emerald px-6 py-3 rounded-xl text-sm sm:text-base">
+                    🏠 মূল মেনু
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (5 clicks open secret creator stats modal) -->
+    <footer onclick="handleSecretStatsClick()" class="mt-4 text-center text-[11px] sm:text-xs text-emerald-300/75 px-4 cursor-pointer">
+        ইসলামিক আদব, শালীন পোশাক ও সিরাত শিক্ষার উদ্দেশ্যে নির্মিত • জাযাকাল্লাহু খাইরান
+    </footer>
+
+    <!-- Secret Creator Stats Modal -->
+    <div id="secretStatsModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="gold-card rounded-3xl p-6 max-w-sm w-full text-center">
+            <div class="text-3xl mb-2">📊</div>
+            <h3 class="text-lg font-bold text-amber-300 mb-1">গেম পরিসংখ্যান (শুধু আপনার জন্য)</h3>
+            <p class="text-xs text-emerald-200 mb-4">আপনার গেমের কার্যক্রম নিচে দেওয়া হলো:</p>
+
+            <div class="space-y-2.5 text-left bg-emerald-950/90 p-4 rounded-2xl border border-amber-400/30 text-sm mb-5">
+                <div class="flex justify-between">
+                    <span class="text-emerald-200">মোট গেম সেশন (খেলা হয়েছে):</span>
+                    <span id="statTotalPlays" class="font-bold text-amber-300">০ বার</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-emerald-200">সঞ্চিত মোট নেকী কয়েন:</span>
+                    <span id="statTotalCoins" class="font-bold text-amber-300">০</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-emerald-200">আনলক করা রিওয়ার্ড:</span>
+                    <span id="statUnlockedCount" class="font-bold text-amber-300">১ / ৪</span>
+                </div>
+            </div>
+
+            <button onclick="document.getElementById('secretStatsModal').classList.add('hidden')" class="btn-gold w-full py-2.5 rounded-xl text-sm">
+                বন্ধ করুন
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // ==========================================
+        // 0. Player Rewards & Persistence Manager
+        // ==========================================
+        let playerData = {
+            coins: 0,
+            totalPlays: 0,
+            unlockedOutfits: ['default'],
+            equippedOutfit: 'default',
+            dailyProgress: {
+                playedAdventure: false,
+                playedQuiz: false,
+                playedMatch: false,
+                claimedDate: ''
+            }
+        };
+
+        function loadPlayerData() {
+            try {
+                const saved = localStorage.getItem('nuraniSoforData_v2');
+                if (saved) {
+                    playerData = { ...playerData, ...JSON.parse(saved) };
+                }
+            } catch (e) {
+                console.warn('Unable to read saved progress:', e);
+            }
+            playerData.totalPlays = (playerData.totalPlays || 0) + 1;
+            savePlayerData();
+            updateWalletUI();
+        }
+
+        function savePlayerData() {
+            try {
+                localStorage.setItem('nuraniSoforData_v2', JSON.stringify(playerData));
+            } catch (e) {
+                console.warn('Unable to save progress:', e);
+            }
+            updateWalletUI();
+        }
+
+        function addCoins(amount) {
+            playerData.coins += amount;
+            savePlayerData();
+        }
+
+        function updateWalletUI() {
+            const bnCoins = toBengaliNumber(playerData.coins);
+            const topEl = document.getElementById('totalWalletDisplay');
+            const shopEl = document.getElementById('shopWalletDisplay');
+            if (topEl) topEl.textContent = bnCoins;
+            if (shopEl) shopEl.textContent = bnCoins;
+        }
+
+        // Secret stats modal triggered by 5 clicks on footer
+        let secretClicks = 0;
+        let secretTimer = null;
+        function handleSecretStatsClick() {
+            secretClicks++;
+            clearTimeout(secretTimer);
+            secretTimer = setTimeout(() => { secretClicks = 0; }, 2000);
+            if (secretClicks >= 5) {
+                secretClicks = 0;
+                document.getElementById('statTotalPlays').textContent = toBengaliNumber(playerData.totalPlays) + ' বার';
+                document.getElementById('statTotalCoins').textContent = toBengaliNumber(playerData.coins);
+                document.getElementById('statUnlockedCount').textContent = toBengaliNumber(playerData.unlockedOutfits.length) + ' / ৪';
+                document.getElementById('secretStatsModal').classList.remove('hidden');
+            }
+        }
+
+        // ==========================================
+        // 1. Web Audio API Sound Effects
+        // ==========================================
+        let soundEnabled = true;
+        let audioCtx = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (AudioContext) audioCtx = new AudioContext();
+            }
+            if (audioCtx && audioCtx.state === 'suspended') {
+                audioCtx.resume().catch(() => {});
+            }
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            document.getElementById('soundIcon').textContent = soundEnabled ? '🔊' : '🔇';
+            if (soundEnabled) {
+                initAudio();
+                playTone(523.25, 'sine', 0.12);
+            }
+        }
+
+        function playTone(freq, type = 'sine', duration = 0.15, delay = 0) {
+            if (!soundEnabled) return;
+            try {
+                initAudio();
+                if (!audioCtx) return;
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = type;
+                osc.frequency.setValueAtTime(freq, audioCtx.currentTime + delay);
+                gain.gain.setValueAtTime(0.12, audioCtx.currentTime + delay);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + delay + duration);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start(audioCtx.currentTime + delay);
+                osc.stop(audioCtx.currentTime + delay + duration);
+            } catch (e) {
+                // Ignore audio errors if blocked by browser policy
+            }
+        }
+
+        function playCollectSound() {
+            playTone(587.33, 'sine', 0.12, 0);
+            playTone(880.00, 'sine', 0.18, 0.08);
+        }
+
+        function playBadSound() {
+            playTone(220.00, 'triangle', 0.2, 0);
+            playTone(174.61, 'triangle', 0.25, 0.12);
+        }
+
+        function playWinSound() {
+            playTone(523.25, 'sine', 0.15, 0);
+            playTone(659.25, 'sine', 0.15, 0.12);
+            playTone(783.99, 'sine', 0.15, 0.24);
+            playTone(1046.50, 'sine', 0.35, 0.36);
+        }
+
+        // ==========================================
+        // 2. Screen Navigation
+        // ==========================================
+        const screens = [
+            'startScreen', 'adventureScreen', 'quizScreen',
+            'dailyChallengeScreen', 'matchChallengeScreen',
+            'rewardsShopScreen', 'videoGalleryScreen', 'resultScreen'
+        ];
+
+        function showScreen(screenId) {
+            isGameRunning = false;
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+
+            screens.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.add('hidden');
+            });
+            document.getElementById(screenId).classList.remove('hidden');
+
+            const homeBtn = document.getElementById('homeBtn');
+            if (screenId === 'startScreen') {
+                homeBtn.classList.add('hidden');
+            } else {
+                homeBtn.classList.remove('hidden');
+            }
+        }
+
+        function toggleHowToPlay() {
+            document.getElementById('howToPlayBox').classList.toggle('hidden');
+        }
+
+        function openVideoGallery() {
+            initAudio();
+            showScreen('videoGalleryScreen');
+        }
+
+        // ==========================================
+        // 3. Mode 1: Modest Clothing & Virtues Adventure
+        // ==========================================
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let isGameRunning = false;
+        let isPaused = false;
+        let animationFrameId = null;
+
+        let currentLevel = 1;
+        let score = 0;
+        let targetScore = 100;
+        let lives = 3;
+        let lastSpawnTime = 0;
+        let items = [];
+        let particles = [];
+        let starsBg = [];
+
+        let collectedChecklist = {
+            kameez: false,
+            hijab: false,
+            panjabi: false,
+            virtue: false
+        };
+
+        const player = {
+            x: 0,
+            y: 0,
+            width: 54,
+            height: 64,
+            speed: 7,
+            moveLeft: false,
+            moveRight: false
+        };
+
+        const outfitsConfig = {
+            default: { name: 'সবুজ সুন্নতি পোশাক', robeColor: '#10b981', borderColor: '#fbbf24', glowColor: 'rgba(212, 175, 55, 0.35)', price: 0, desc: 'সাধারণ শালীন সবুজ পোশাক' },
+            royalGold: { name: 'সোনালী নূরানী জোব্বা', robeColor: '#d97706', borderColor: '#fef08a', glowColor: 'rgba(253, 224, 71, 0.55)', price: 100, desc: 'উজ্জ্বল সোনালী আভাযুক্ত বিশেষ পোশাক' },
+            madinahTeal: { name: 'মদীনার সবুজ আভা', robeColor: '#0d9488', borderColor: '#5eead4', glowColor: 'rgba(94, 234, 212, 0.5)', price: 200, desc: 'প্রশান্তিময় ফিরোজা ও সবুজ নূরানী পোশাক' },
+            pearlWhite: { name: 'শুভ্র জান্নাতি পোশাক', robeColor: '#e2e8f0', borderColor: '#f59e0b', glowColor: 'rgba(255, 255, 255, 0.6)', price: 350, desc: 'পবিত্র শুভ্র রঙের সোনালী কারুকাজ করা পোশাক' }
+        };
+
+        const goodItemsPool = [
+            { type: 'kameez', emoji: '👗', label: 'লম্বা কামিজ', points: 15, msg: 'মাশাআল্লাহ! শালীন লম্বা কামিজ সংগ্রহ হয়েছে (+১৫)' },
+            { type: 'hijab', emoji: '🧕', label: 'ওড়না ও পর্দা', points: 15, msg: 'সুবহানাল্লাহ! পর্দা ও হিজাব নারীর মর্যাদা (+১৫)' },
+            { type: 'panjabi', emoji: '👕', label: 'সুন্নতি পাঞ্জাবি', points: 15, msg: 'আলহামদুলিল্লাহ! পরিচ্ছন্ন পাঞ্জাবি (+১৫)' },
+            { type: 'panjabi', emoji: '🧢', label: 'নামাজের টুপি', points: 10, msg: 'সুন্দর! টুপি ও সুন্নাহর অনুসরণ (+১০)' },
+            { type: 'virtue', emoji: '🌿', label: 'সবর (ধৈর্য)', points: 10, msg: 'সবর বা ধৈর্য মুমিনের ঢাল (+১০)' },
+            { type: 'virtue', emoji: '💛', label: 'দয়া ও মায়া', points: 10, msg: 'সৃষ্টির প্রতি দয়া রাসূল (সাঃ)-এর শিক্ষা (+১০)' },
+            { type: 'virtue', emoji: '🪙', label: 'দান-সদকা', points: 15, msg: 'হযরত ফাতেমা (রাঃ) নিজ খাবার দান করতেন (+১৫)' }
+        ];
+
+        const badItemsPool = [
+            { type: 'bad', emoji: '🔥', label: 'অহংকার', msg: 'সাবধান! অহংকার পতন ডেকে আনে (-১ জীবন)' },
+            { type: 'bad', emoji: '💸', label: 'অপচয়', msg: 'সাবধান! ইসলাম অপচয় পছন্দ করে না (-১ জীবন)' }
+        ];
+
+        const levelLessons = [
+            "হযরত ফাতেমা (রাঃ) সর্বদা শালীন ও পর্দাপূর্ণ পোশাক পরিধান করতেন। পর্দা ও লজ্জাশীলতা (হায়া) ঈমানের অবিচ্ছেদ্য অংশ।",
+            "রাসূলুল্লাহ (সাঃ) বলেছেন: 'আল্লাহ সুন্দর এবং তিনি সৌন্দর্য ও পরিচ্ছন্নতা পছন্দ করেন, তবে অপচয় ও অহংকার পছন্দ করেন না।'",
+            "হযরত ফাতেমা যাহরা (রাঃ) নিজের ক্ষুধা থাকা সত্ত্বেও অভাবী ও এতিমদের নিজের খাবার দান করে দিতেন। এটাই প্রকৃত গোলাম-ই-রসূলের আদর্শ।"
+        ];
+
+        function resizeCanvas() {
+            const container = canvas.parentElement;
+            if (!container) return;
+            canvas.width = container.clientWidth;
+            canvas.height = container.clientHeight;
+            player.y = canvas.height - player.height - 16;
+            if (player.x === 0 || player.x > canvas.width - player.width) {
+                player.x = (canvas.width - player.width) / 2;
+            }
+            initStarsBg();
+        }
+
+        function initStarsBg() {
+            starsBg = [];
+            for (let i = 0; i < 28; i++) {
+                starsBg.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * (canvas.height * 0.65),
+                    r: Math.random() * 1.8 + 0.5,
+                    alpha: Math.random() * 0.7 + 0.3
+                });
+            }
+        }
+
+        window.addEventListener('resize', () => {
+            if (!document.getElementById('adventureScreen').classList.contains('hidden')) {
+                resizeCanvas();
+            }
+        });
+
+        function startAdventureMode(level = 1) {
+            initAudio();
+            currentLevel = level;
+            score = 0;
+            targetScore = 90 + (level - 1) * 40;
+            lives = 3;
+            items = [];
+            particles = [];
+            isPaused = false;
+            collectedChecklist = { kameez: false, hijab: false, panjabi: false, virtue: false };
+
+            document.getElementById('pauseOverlay').classList.add('hidden');
+            document.getElementById('pauseBtn').textContent = '⏸ বিরতি';
+
+            showScreen('adventureScreen');
+            resizeCanvas();
+            player.x = (canvas.width - player.width) / 2;
+
+            updateAdventureHUD();
+            updateChecklistUI();
+
+            isGameRunning = true;
+            lastSpawnTime = performance.now();
+            animationFrameId = requestAnimationFrame(gameLoop);
+        }
+
+        function togglePause() {
+            if (!isGameRunning) return;
+            isPaused = !isPaused;
+            const overlay = document.getElementById('pauseOverlay');
+            const btn = document.getElementById('pauseBtn');
+            if (isPaused) {
+                overlay.classList.remove('hidden');
+                btn.textContent = '▶ চালু';
+            } else {
+                overlay.classList.add('hidden');
+                btn.textContent = '⏸ বিরতি';
+                lastSpawnTime = performance.now();
+                animationFrameId = requestAnimationFrame(gameLoop);
+            }
+        }
+
+        function updateAdventureHUD() {
+            document.getElementById('levelDisplay').textContent = toBengaliNumber(currentLevel);
+            document.getElementById('scoreDisplay').textContent = toBengaliNumber(score);
+            document.getElementById('targetScoreDisplay').textContent = toBengaliNumber(targetScore);
+            let hearts = '';
+            for (let i = 0; i < 3; i++) hearts += i < lives ? '❤️' : '🖤';
+            document.getElementById('livesDisplay').textContent = hearts;
+        }
+
+        function updateChecklistUI() {
+            const map = { kameez: 'badge-kameez', hijab: 'badge-hijab', panjabi: 'badge-panjabi', virtue: 'badge-virtue' };
+            for (const key in map) {
+                const el = document.getElementById(map[key]);
+                if (collectedChecklist[key]) {
+                    el.classList.remove('opacity-50', 'border-emerald-700/50');
+                    el.classList.add('opacity-100', 'border-amber-400', 'bg-amber-500/20', 'text-amber-200', 'font-bold');
+                } else {
+                    el.classList.add('opacity-50', 'border-emerald-700/50');
+                    el.classList.remove('opacity-100', 'border-amber-400', 'bg-amber-500/20', 'text-amber-200', 'font-bold');
+                }
+            }
+        }
+
+        let toastTimeout = null;
+        function showFloatingToast(text, isBad = false) {
+            const toast = document.getElementById('floatingToast');
+            toast.textContent = text;
+            if (isBad) {
+                toast.classList.remove('border-amber-400', 'text-amber-200', 'bg-emerald-950/90');
+                toast.classList.add('border-red-400', 'text-red-200', 'bg-red-950/90');
+            } else {
+                toast.classList.add('border-amber-400', 'text-amber-200', 'bg-emerald-950/90');
+                toast.classList.remove('border-red-400', 'text-red-200', 'bg-red-950/90');
+            }
+            toast.style.opacity = '1';
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => { toast.style.opacity = '0'; }, 1900);
+        }
+
+        function spawnItem() {
+            const isBad = Math.random() < (0.22 + currentLevel * 0.04);
+            const template = isBad
+                ? badItemsPool[Math.floor(Math.random() * badItemsPool.length)]
+                : goodItemsPool[Math.floor(Math.random() * goodItemsPool.length)];
+            const size = 42;
+            items.push({
+                ...template,
+                x: Math.random() * (canvas.width - size - 20) + 10,
+                y: -size,
+                size: size,
+                speed: (2.2 + currentLevel * 0.45) + Math.random() * 1.1
+            });
+        }
+
+        function createSparkles(x, y, color) {
+            for (let i = 0; i < 12; i++) {
+                particles.push({
+                    x: x, y: y,
+                    vx: (Math.random() - 0.5) * 5,
+                    vy: (Math.random() - 0.5) * 5,
+                    life: 1.0, color: color
+                });
+            }
+        }
+
+        function drawBackground() {
+            const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            grad.addColorStop(0, '#022c22');
+            grad.addColorStop(0.6, '#064e3b');
+            grad.addColorStop(1, '#043927');
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            starsBg.forEach(s => {
+                ctx.fillStyle = `rgba(254, 240, 138, ${s.alpha})`;
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            ctx.fillStyle = 'rgba(253, 224, 71, 0.85)';
+            ctx.beginPath();
+            ctx.arc(canvas.width - 55, 48, 18, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#033629';
+            ctx.beginPath();
+            ctx.arc(canvas.width - 48, 43, 15, 0, Math.PI * 2);
+            ctx.fill();
+
+            const baseY = canvas.height - 28;
+            ctx.fillStyle = 'rgba(2, 44, 34, 0.65)';
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, baseY - 25, 48, Math.PI, 0);
+            ctx.fillRect(canvas.width / 2 - 48, baseY - 25, 96, 25);
+            ctx.fill();
+            ctx.fillRect(canvas.width / 2 - 72, baseY - 65, 12, 65);
+            ctx.fillRect(canvas.width / 2 + 60, baseY - 65, 12, 65);
+
+            ctx.fillStyle = '#022c22';
+            ctx.fillRect(0, canvas.height - 24, canvas.width, 24);
+            ctx.strokeStyle = 'rgba(212, 175, 55, 0.5)';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(0, canvas.height - 24);
+            ctx.lineTo(canvas.width, canvas.height - 24);
+            ctx.stroke();
+        }
+
+        function drawPlayer() {
+            const cx = player.x + player.width / 2;
+            const topY = player.y;
+            const outfit = outfitsConfig[playerData.equippedOutfit] || outfitsConfig.default;
+
+            const glow = ctx.createRadialGradient(cx, topY + 32, 5, cx, topY + 32, 44);
+            glow.addColorStop(0, outfit.glowColor);
+            glow.addColorStop(1, 'rgba(212, 175, 55, 0)');
+            ctx.fillStyle = glow;
+            ctx.beginPath();
+            ctx.arc(cx, topY + 32, 44, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = outfit.robeColor;
+            ctx.beginPath();
+            ctx.moveTo(cx - 14, topY + 24);
+            ctx.lineTo(cx + 14, topY + 24);
+            ctx.lineTo(cx + 22, topY + 58);
+            ctx.lineTo(cx - 22, topY + 58);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.strokeStyle = outfit.borderColor;
+            ctx.lineWidth = 1.8;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(cx, topY + 25);
+            ctx.lineTo(cx, topY + 55);
+            ctx.stroke();
+
+            ctx.fillStyle = '#fde68a';
+            ctx.beginPath();
+            ctx.arc(cx, topY + 14, 10, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.arc(cx, topY + 11, 10.5, Math.PI, 0);
+            ctx.fill();
+
+            ctx.fillStyle = 'rgba(2, 44, 34, 0.85)';
+            ctx.fillRect(cx - 32, topY + 60, 64, 15);
+            ctx.fillStyle = '#fde047';
+            ctx.font = 'bold 10px "Hind Siliguri", sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('মুমিন পথিক', cx, topY + 71);
+        }
+
+        function drawItems() {
+            items.forEach(item => {
+                ctx.beginPath();
+                ctx.arc(item.x + item.size / 2, item.y + item.size / 2, item.size / 2 + 2, 0, Math.PI * 2);
+                if (item.type === 'bad') {
+                    ctx.fillStyle = 'rgba(185, 28, 28, 0.35)';
+                    ctx.strokeStyle = '#f87171';
+                } else {
+                    ctx.fillStyle = 'rgba(6, 95, 70, 0.65)';
+                    ctx.strokeStyle = '#fbbf24';
+                }
+                ctx.lineWidth = 1.5;
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.font = '24px serif';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(item.emoji, item.x + item.size / 2, item.y + item.size / 2 - 2);
+
+                ctx.fillStyle = item.type === 'bad' ? '#fecaca' : '#fef08a';
+                ctx.font = 'bold 10px "Hind Siliguri", sans-serif';
+                ctx.fillText(item.label, item.x + item.size / 2, item.y + item.size + 10);
+            });
+        }
+
+        function drawParticles() {
+            particles.forEach(p => {
+                ctx.fillStyle = p.color;
+                ctx.globalAlpha = p.life;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            ctx.globalAlpha = 1;
+        }
+
+        function gameLoop(timestamp) {
+            if (!isGameRunning || isPaused) return;
+
+            const spawnInterval = Math.max(650, 1250 - currentLevel * 140);
+            if (timestamp - lastSpawnTime > spawnInterval) {
+                spawnItem();
+                lastSpawnTime = timestamp;
+            }
+
+            if (player.moveLeft) player.x -= player.speed;
+            if (player.moveRight) player.x += player.speed;
+            if (player.x < 6) player.x = 6;
+            if (player.x > canvas.width - player.width - 6) player.x = canvas.width - player.width - 6;
+
+            for (let i = items.length - 1; i >= 0; i--) {
+                const it = items[i];
+                it.y += it.speed;
+
+                const hit = (
+                    it.x < player.x + player.width &&
+                    it.x + it.size > player.x &&
+                    it.y < player.y + player.height &&
+                    it.y + it.size > player.y
+                );
+
+                if (hit) {
+                    if (it.type === 'bad') {
+                        lives--;
+                        playBadSound();
+                        showFloatingToast(it.msg, true);
+                        createSparkles(it.x + it.size / 2, it.y + it.size / 2, '#f87171');
+                        updateAdventureHUD();
+                        if (lives <= 0) {
+                            endAdventureLevel(false);
+                            return;
+                        }
+                    } else {
+                        score += it.points;
+                        playCollectSound();
+                        showFloatingToast(it.msg, false);
+                        createSparkles(it.x + it.size / 2, it.y + it.size / 2, '#fde047');
+                        if (collectedChecklist.hasOwnProperty(it.type)) {
+                            collectedChecklist[it.type] = true;
+                            updateChecklistUI();
+                        }
+                        updateAdventureHUD();
+                        if (score >= targetScore) {
+                            endAdventureLevel(true);
+                            return;
+                        }
+                    }
+                    items.splice(i, 1);
+                    continue;
+                }
+
+                if (it.y > canvas.height + 20) items.splice(i, 1);
+            }
+
+            for (let i = particles.length - 1; i >= 0; i--) {
+                const p = particles[i];
+                p.x += p.vx; p.y += p.vy; p.life -= 0.035;
+                if (p.life <= 0) particles.splice(i, 1);
+            }
+
+            drawBackground();
+            drawItems();
+            drawPlayer();
+            drawParticles();
+
+            animationFrameId = requestAnimationFrame(gameLoop);
+        }
+
+        let lastModePlayed = 'adventure';
+        let lastLevelWon = false;
+
+        function endAdventureLevel(won) {
+            isGameRunning = false;
+            lastModePlayed = 'adventure';
+            lastLevelWon = won;
+
+            if (score > 0) addCoins(score);
+            if (won) {
+                playerData.dailyProgress.playedAdventure = true;
+                savePlayerData();
+                playWinSound();
+                document.getElementById('resultIcon').textContent = '🕌✨';
+                document.getElementById('resultTitle').textContent = `মাশাআল্লাহ! ধাপ ${toBengaliNumber(currentLevel)} সম্পন্ন হয়েছে`;
+                document.getElementById('resultSubtitle').textContent = 'আপনি শালীন পোশাক ও সৎগুণের সাথে নূরানী সফর পূর্ণ করেছেন।';
+                document.getElementById('finalStarsText').textContent = lives === 3 ? '⭐⭐⭐' : (lives === 2 ? '⭐⭐' : '⭐');
+                document.getElementById('nextActionBtn').textContent = currentLevel < 3 ? 'পরবর্তী ধাপ খেলুন ➔' : 'আবার শুরু থেকে খেলুন ↻';
+            } else {
+                document.getElementById('resultIcon').textContent = '🌿';
+                document.getElementById('resultTitle').textContent = 'চেষ্টা অব্যাহত রাখুন!';
+                document.getElementById('resultSubtitle').textContent = 'অহংকার ও অপচয় এড়িয়ে আবার শালীনতা ও নেকী সংগ্রহের চেষ্টা করুন।';
+                document.getElementById('finalStarsText').textContent = '⭐';
+                document.getElementById('nextActionBtn').textContent = 'আবার চেষ্টা করুন ↻';
+            }
+
+            document.getElementById('finalScoreText').textContent = '+' + toBengaliNumber(score);
+            const lessonIdx = (currentLevel - 1) % levelLessons.length;
+            document.getElementById('moralLessonText').textContent = levelLessons[lessonIdx];
+
+            showScreen('resultScreen');
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') player.moveLeft = true;
+            if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') player.moveRight = true;
+        });
+
+        window.addEventListener('keyup', (e) => {
+            if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') player.moveLeft = false;
+            if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') player.moveRight = false;
+        });
+
+        const leftBtn = document.getElementById('leftTouchBtn');
+        const rightBtn = document.getElementById('rightTouchBtn');
+
+        ['touchstart', 'mousedown'].forEach(evt => {
+            leftBtn.addEventListener(evt, (e) => { e.preventDefault(); player.moveLeft = true; });
+            rightBtn.addEventListener(evt, (e) => { e.preventDefault(); player.moveRight = true; });
+        });
+
+        ['touchend', 'mouseup', 'mouseleave'].forEach(evt => {
+            leftBtn.addEventListener(evt, () => { player.moveLeft = false; });
+            rightBtn.addEventListener(evt, () => { player.moveRight = false; });
+        });
+
+        canvas.addEventListener('touchmove', (e) => {
+            if (!isGameRunning || isPaused) return;
+            e.preventDefault();
+            const rect = canvas.getBoundingClientRect();
+            const touchX = e.touches[0].clientX - rect.left;
+            player.x = touchX - player.width / 2;
+        }, { passive: false });
+
+        // ==========================================
+        // 4. Mode 2: Seerah & Fatimah (RA) Quiz
+        // ==========================================
+        const quizQuestions = [
+            {
+                q: "হযরত ফাতেমা যাহরা (রাঃ)-এর পিতা কে ছিলেন?",
+                options: ["হযরত মুহাম্মদ মুস্তফা (সাঃ)", "হযরত আবু বকর সিদ্দীক (রাঃ)", "হযরত উমর ফারুক (রাঃ)", "হযরত উসমান গণি (রাঃ)"],
+                correct: 0,
+                explanation: "হযরত ফাতেমা (রাঃ) ছিলেন বিশ্বনবী হযরত মুহাম্মদ (সাঃ) ও উম্মুল মুমিনীন হযরত খাদিজা (রাঃ)-এর কনিষ্ঠ ও অত্যন্ত প্রিয় কন্যা।"
+            },
+            {
+                q: "হযরত ফাতেমা (রাঃ)-এর অন্যতম শ্রেষ্ঠ উপাধি কোনটি?",
+                options: ["খাতুনে জান্নাত (জান্নাতের নারীদের সরদার)", "সাইফুল্লাহ", "আসাদুল্লাহ", "যুন-নূরাইন"],
+                correct: 0,
+                explanation: "রাসূলুল্লাহ (সাঃ) হযরত ফাতেমা (রাঃ)-কে জান্নাতবাসী নারীদের সরদার বা 'খাতুনে জান্নাত' হিসেবে সুসংবাদ দিয়েছেন।"
+            },
+            {
+                q: "ইসলামে নারী ও পুরুষের পোশাক (যেমন কামিজ, ওড়না, পাঞ্জাবি) কেমন হওয়া উচিত?",
+                options: ["শালীন, ঢিলেঢালা, পরিচ্ছন্ন ও পর্দাপূর্ণ", "অত্যন্ত জাঁকজমকপূর্ণ ও অপচয়মূলক", "অহংকার প্রদর্শনের জন্য", "যেকোনো অশালীন পোশাক"],
+                correct: 0,
+                explanation: "ইসলাম পরিচ্ছন্ন ও শালীন পোশাক (লম্বা কামিজ, হিজাব/ওড়না, পাঞ্জাবি) পরিধানের নির্দেশ দেয়, যা মানুষের মর্যাদা ও লজ্জাশীলতা রক্ষা করে।"
+            },
+            {
+                q: "হযরত ফাতেমা (রাঃ) নিজের ও পরিবারের খাবার না খেয়ে কাদের দান করে দিয়েছিলেন, যে সম্পর্কে সূরা দাহরে আয়াত নাযিল হয়?",
+                options: ["মিসকিন, এতিম ও বন্দীদের", "ধনী প্রতিবেশীদের", "রাজদরবারের লোকদের", "বিদেশি বণিকদের"],
+                correct: 0,
+                explanation: "তিন দিন রোজা রাখার পর ইফতারের সময় পরপর তিন দিন মিসকিন, এতিম ও বন্দী দরজায় এলে হযরত ফাতেমা (রাঃ) ও হযরত আলী (রাঃ) নিজেদের সব খাবার দান করে দেন।"
+            },
+            {
+                q: "'গোলাম-ই-রসূল' বা রাসূল (সাঃ)-এর প্রকৃত প্রেমিক হওয়ার প্রধান পরিচয় কী?",
+                options: ["নবীজী (সাঃ)-এর সুন্নাহ অনুসরণ ও উত্তম চরিত্র গঠন করা", "শুধু মুখে দাবি করা", "মানুষের সাথে রূঢ় আচরণ করা", "অলসভাবে বসে থাকা"],
+                correct: 0,
+                explanation: "আল্লাহ তাআলা কুরআনে বলেছেন, নবীজী (সাঃ)-কে ভালোবাসার প্রমাণ হলো তাঁর আদর্শ ও সুন্নাহর অনুসরণ করা।"
+            },
+            {
+                q: "হযরত ফাতেমা (রাঃ)-এর জীবনযাপন কেমন ছিল?",
+                options: ["অত্যন্ত সাদাসিধে, ধৈর্যশীল ও ইবাদতমুখী", "বিলাসবহুল প্রাসাদে বসবাস", "অহংকারপূর্ণ জীবন", "কাজকর্মবিহীন জীবন"],
+                correct: 0,
+                explanation: "তিনি নিজ হাতে জাঁতা ঘুরিয়ে আটা পিষতেন, পানি বহন করতেন এবং সর্বদা আল্লাহর শুকরিয়া ও ইবাদতে মশগুল থাকতেন।"
+            },
+            {
+                q: "রাসূলুল্লাহ (সাঃ)-এর হাদিস অনুযায়ী 'আল-হায়া' বা লজ্জাশীলতা কিসের অঙ্গ?",
+                options: ["ঈমানের অঙ্গ", "দুর্বলতার লক্ষণ", "অপ্রয়োজনীয় বিষয়", "শুধু শিশুদের বিষয়"],
+                correct: 0,
+                explanation: "সহীহ বুখারী ও মুসলিমের হাদিসে বর্ণিত হয়েছে: 'লজ্জাশীলতা (হায়া) ঈমানের অন্যতম প্রধান শাখা, এবং লজ্জাশীলতা কেবল কল্যাণই বয়ে আনে।'"
+            }
+        ];
+
+        let currentQIndex = 0;
+        let quizScore = 0;
+        let answeredCurrent = false;
+
+        function startQuizMode() {
+            initAudio();
+            currentQIndex = 0;
+            quizScore = 0;
+            document.getElementById('quizScore').textContent = toBengaliNumber(0);
+            document.getElementById('qTotal').textContent = toBengaliNumber(quizQuestions.length);
+            showScreen('quizScreen');
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            answeredCurrent = false;
+            const qObj = quizQuestions[currentQIndex];
+            document.getElementById('qNumber').textContent = toBengaliNumber(currentQIndex + 1);
+            document.getElementById('questionText').textContent = qObj.q;
+            document.getElementById('quizFeedbackBox').classList.add('hidden');
+
+            const container = document.getElementById('optionsContainer');
+            container.innerHTML = '';
+
+            const labels = ['ক', 'খ', 'গ', 'ঘ'];
+            qObj.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full text-left p-3.5 sm:p-4 rounded-2xl bg-emerald-900/75 hover:bg-emerald-800 border border-amber-400/30 text-sm sm:text-base text-white transition flex items-center gap-3';
+                btn.innerHTML = `
+                    <span class="w-7 h-7 rounded-full bg-amber-400/20 border border-amber-400/50 text-amber-300 font-bold flex items-center justify-center shrink-0 text-xs sm:text-sm">${labels[idx]}</span>
+                    <span>${opt}</span>
+                `;
+                btn.onclick = () => selectAnswer(idx, btn);
+                container.appendChild(btn);
+            });
+        }
+
+        function selectAnswer(selectedIdx, btnElement) {
+            if (answeredCurrent) return;
+            answeredCurrent = true;
+
+            const qObj = quizQuestions[currentQIndex];
+            const buttons = document.getElementById('optionsContainer').children;
+            const feedbackBox = document.getElementById('quizFeedbackBox');
+            const feedbackTitle = document.getElementById('feedbackTitle');
+            const feedbackExp = document.getElementById('feedbackExplanation');
+
+            if (selectedIdx === qObj.correct) {
+                quizScore += 20;
+                document.getElementById('quizScore').textContent = toBengaliNumber(quizScore);
+                btnElement.classList.remove('bg-emerald-900/75', 'border-amber-400/30');
+                btnElement.classList.add('bg-emerald-600', 'border-amber-300', 'font-bold');
+                feedbackTitle.textContent = '✅ মাশাআল্লাহ! সঠিক উত্তর (+২০ কয়েন)';
+                feedbackTitle.className = 'font-bold text-base text-emerald-300';
+                playCollectSound();
+            } else {
+                btnElement.classList.remove('bg-emerald-900/75', 'border-amber-400/30');
+                btnElement.classList.add('bg-red-900/80', 'border-red-400');
+                buttons[qObj.correct].classList.remove('bg-emerald-900/75');
+                buttons[qObj.correct].classList.add('bg-emerald-700', 'border-amber-300');
+                feedbackTitle.textContent = 'ℹ️ সঠিক উত্তরটি জেনে নিন:';
+                feedbackTitle.className = 'font-bold text-base text-amber-300';
+                playBadSound();
+            }
+
+            feedbackExp.textContent = qObj.explanation;
+            feedbackBox.classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQIndex++;
+            if (currentQIndex < quizQuestions.length) {
+                loadQuestion();
+            } else {
+                lastModePlayed = 'quiz';
+                if (quizScore > 0) addCoins(quizScore);
+                playerData.dailyProgress.playedQuiz = true;
+                savePlayerData();
+
+                playWinSound();
+                document.getElementById('resultIcon').textContent = '📖✨';
+                document.getElementById('resultTitle').textContent = 'আলহামদুলিল্লাহ! কুইজ সম্পন্ন হয়েছে';
+                document.getElementById('resultSubtitle').textContent = 'আপনি হযরত ফাতেমা (রাঃ) ও রাসূল (সাঃ)-এর আদর্শ সম্পর্কে চমৎকার জ্ঞান অর্জন করেছেন।';
+                document.getElementById('finalScoreText').textContent = '+' + toBengaliNumber(quizScore);
+                document.getElementById('finalStarsText').textContent = quizScore >= 120 ? '⭐⭐⭐' : (quizScore >= 80 ? '⭐⭐' : '⭐');
+                document.getElementById('moralLessonText').textContent = "ইসলামিক জ্ঞান অর্জন করা প্রত্যেক মুসলিম নর-নারীর ওপর ফরজ। আসুন আমরা হযরত ফাতেমা (রাঃ)-এর পর্দা ও রাসূল (সাঃ)-এর সুন্নাহ আমাদের জীবনে বাস্তবায়ন করি।";
+                document.getElementById('nextActionBtn').textContent = 'পর্দা ও পোশাক সফর খেলুন ▶';
+                showScreen('resultScreen');
+            }
+        }
+
+        // ==========================================
+        // 5. Challenge 1: Daily Sunnah Checklist
+        // ==========================================
+        function openDailyChallenge() {
+            initAudio();
+            showScreen('dailyChallengeScreen');
+            renderDailyTasks();
+        }
+
+        function renderDailyTasks() {
+            const todayStr = new Date().toDateString();
+            if (playerData.dailyProgress.claimedDate && playerData.dailyProgress.claimedDate !== todayStr) {
+                playerData.dailyProgress = { playedAdventure: false, playedQuiz: false, playedMatch: false, claimedDate: '' };
+                savePlayerData();
+            }
+
+            const tasks = [
+                { title: 'পর্দা ও শালীন পোশাক সফরের ১টি ধাপ সম্পন্ন করুন', done: playerData.dailyProgress.playedAdventure },
+                { title: 'হযরত ফাতেমা (রাঃ) সিরাত কুইজ সম্পন্ন করুন', done: playerData.dailyProgress.playedQuiz },
+                { title: 'হাদিস ও আদব জোড়া মেলানো পাজল সমাধান করুন', done: playerData.dailyProgress.playedMatch }
+            ];
+
+            const container = document.getElementById('dailyTasksList');
+            container.innerHTML = '';
+            tasks.forEach(t => {
+                const div = document.createElement('div');
+                div.className = `p-3.5 rounded-2xl border flex items-center justify-between ${t.done ? 'bg-emerald-800/60 border-amber-400 text-amber-200' : 'bg-emerald-950/70 border-emerald-700/50 text-emerald-100'}`;
+                div.innerHTML = `
+                    <span class="text-xs sm:text-sm font-medium">${t.title}</span>
+                    <span class="text-lg">${t.done ? '✅' : '⏳'}</span>
+                `;
+                container.appendChild(div);
+            });
+
+            const allDone = tasks.every(t => t.done);
+            const alreadyClaimed = playerData.dailyProgress.claimedDate === todayStr;
+            const btn = document.getElementById('claimDailyBtn');
+
+            if (alreadyClaimed) {
+                btn.textContent = '✅ আজকের বোনাস সংগ্রহ করা হয়েছে';
+                btn.disabled = true;
+                btn.classList.add('opacity-60', 'cursor-not-allowed');
+            } else if (allDone) {
+                btn.textContent = '🎁 বোনাস ৫০ কয়েন সংগ্রহ করুন';
+                btn.disabled = false;
+                btn.classList.remove('opacity-60', 'cursor-not-allowed');
+            } else {
+                btn.textContent = 'সবগুলো চ্যালেঞ্জ শেষ করে বোনাস নিন';
+                btn.disabled = true;
+                btn.classList.add('opacity-60', 'cursor-not-allowed');
+            }
+        }
+
+        function claimDailyReward() {
+            const todayStr = new Date().toDateString();
+            if (playerData.dailyProgress.claimedDate === todayStr) return;
+            playerData.dailyProgress.claimedDate = todayStr;
+            addCoins(50);
+            playWinSound();
+            renderDailyTasks();
+        }
+
+        // ==========================================
+        // 6. Challenge 2: Hadith & Adab Pair Puzzle
+        // ==========================================
+        const matchPairs = [
+            { id: 1, left: 'আল-হায়া (লজ্জাশীলতা)', right: 'ঈমানের অন্যতম প্রধান অঙ্গ' },
+            { id: 2, left: 'খাতুনে জান্নাত', right: 'হযরত ফাতেমা যাহরা (রাঃ)' },
+            { id: 3, left: 'সবর (ধৈর্য)', right: 'মুমিনের জন্য ঢালস্বরূপ' },
+            { id: 4, left: 'অপচয় ও অহংকার', right: 'ইসলামে সম্পূর্ণ বর্জনীয়' }
+        ];
+
+        let selectedLeftId = null;
+        let matchedIds = [];
+
+        function startMatchChallenge() {
+            initAudio();
+            selectedLeftId = null;
+            matchedIds = [];
+            document.getElementById('matchCountDisplay').textContent = '০';
+            document.getElementById('matchStatusMsg').textContent = '';
+            showScreen('matchChallengeScreen');
+            renderMatchBoard();
+        }
+
+        function renderMatchBoard() {
+            const leftCol = document.getElementById('matchLeftCol');
+            const rightCol = document.getElementById('matchRightCol');
+            leftCol.innerHTML = '';
+            rightCol.innerHTML = '';
+
+            const shuffledRight = [...matchPairs].sort(() => Math.random() - 0.5);
+
+            matchPairs.forEach(item => {
+                const btn = document.createElement('button');
+                btn.id = `m-left-${item.id}`;
+                btn.className = 'w-full p-3 rounded-xl bg-emerald-900/80 border border-amber-400/40 text-xs sm:text-sm text-amber-200 font-semibold text-left transition';
+                btn.textContent = item.left;
+                btn.onclick = () => selectMatchLeft(item.id);
+                leftCol.appendChild(btn);
+            });
+
+            shuffledRight.forEach(item => {
+                const btn = document.createElement('button');
+                btn.id = `m-right-${item.id}`;
+                btn.className = 'w-full p-3 rounded-xl bg-emerald-950/85 border border-emerald-500/40 text-xs sm:text-sm text-emerald-100 text-left transition';
+                btn.textContent = item.right;
+                btn.onclick = () => selectMatchRight(item.id);
+                rightCol.appendChild(btn);
+            });
+        }
+
+        function selectMatchLeft(id) {
+            if (matchedIds.includes(id)) return;
+            selectedLeftId = id;
+            matchPairs.forEach(p => {
+                const el = document.getElementById(`m-left-${p.id}`);
+                if (!matchedIds.includes(p.id)) {
+                    el.classList.remove('ring-2', 'ring-amber-300', 'bg-amber-500/30');
+                }
+            });
+            document.getElementById(`m-left-${id}`).classList.add('ring-2', 'ring-amber-300', 'bg-amber-500/30');
+        }
+
+        function selectMatchRight(rightId) {
+            if (!selectedLeftId || matchedIds.includes(rightId)) return;
+            const statusMsg = document.getElementById('matchStatusMsg');
+
+            if (selectedLeftId === rightId) {
+                matchedIds.push(rightId);
+                playCollectSound();
+                const lBtn = document.getElementById(`m-left-${rightId}`);
+                const rBtn = document.getElementById(`m-right-${rightId}`);
+                lBtn.className = 'w-full p-3 rounded-xl bg-emerald-600/80 border border-amber-300 text-xs sm:text-sm text-white font-bold text-left opacity-80';
+                rBtn.className = 'w-full p-3 rounded-xl bg-emerald-600/80 border border-amber-300 text-xs sm:text-sm text-white font-bold text-left opacity-80';
+                selectedLeftId = null;
+                document.getElementById('matchCountDisplay').textContent = toBengaliNumber(matchedIds.length);
+                statusMsg.textContent = '✅ মাশাআল্লাহ! সঠিক জোড়া মিলেছে';
+
+                if (matchedIds.length === matchPairs.length) {
+                    setTimeout(() => {
+                        lastModePlayed = 'match';
+                        addCoins(60);
+                        playerData.dailyProgress.playedMatch = true;
+                        savePlayerData();
+                        playWinSound();
+                        document.getElementById('resultIcon').textContent = '🧩✨';
+                        document.getElementById('resultTitle').textContent = 'সুবহানাল্লাহ! পাজল সম্পন্ন হয়েছে';
+                        document.getElementById('resultSubtitle').textContent = 'আপনি সবগুলো হাদিস ও আদবের সঠিক জোড়া মিলিয়েছেন।';
+                        document.getElementById('finalScoreText').textContent = '+৬০';
+                        document.getElementById('finalStarsText').textContent = '⭐⭐⭐';
+                        document.getElementById('moralLessonText').textContent = "উত্তম চরিত্র ও ইসলামিক আদব শিক্ষা করা মুমিনের জীবনকে সুন্দর ও বরকতময় করে তোলে।";
+                        document.getElementById('nextActionBtn').textContent = 'আবার পাজল খেলুন ↻';
+                        showScreen('resultScreen');
+                    }, 700);
+                }
+            } else {
+                playBadSound();
+                statusMsg.textContent = '❌ সঠিক জোড়া হয়নি, আবার চেষ্টা করুন';
+                selectedLeftId = null;
+                matchPairs.forEach(p => {
+                    const el = document.getElementById(`m-left-${p.id}`);
+                    if (!matchedIds.includes(p.id)) el.classList.remove('ring-2', 'ring-amber-300', 'bg-amber-500/30');
+                });
+            }
+        }
+
+        // ==========================================
+        // 7. Rewards & Outfit Unlock Shop
+        // ==========================================
+        function openRewardsShop() {
+            initAudio();
+            const notice = document.getElementById('shopFeedbackNotice');
+            if (notice) notice.classList.add('hidden');
+            showScreen('rewardsShopScreen');
+            renderRewardsShop();
+        }
+
+        function renderRewardsShop() {
+            updateWalletUI();
+            const grid = document.getElementById('shopItemsGrid');
+            grid.innerHTML = '';
+
+            Object.keys(outfitsConfig).forEach(key => {
+                const item = outfitsConfig[key];
+                const isUnlocked = playerData.unlockedOutfits.includes(key);
+                const isEquipped = playerData.equippedOutfit === key;
+
+                const card = document.createElement('div');
+                card.className = `p-4 rounded-2xl border flex flex-col justify-between ${isEquipped ? 'bg-emerald-800/70 border-amber-300' : 'bg-emerald-950/75 border-amber-400/30'}`;
+
+                let btnHtml = '';
+                if (isEquipped) {
+                    btnHtml = `<button disabled class="w-full py-2 rounded-xl bg-amber-400/20 border border-amber-400 text-amber-200 text-xs font-bold">✅ ব্যবহৃত হচ্ছে</button>`;
+                } else if (isUnlocked) {
+                    btnHtml = `<button onclick="equipOutfit('${key}')" class="btn-emerald w-full py-2 rounded-xl text-xs">পরিধান করুন</button>`;
+                } else {
+                    btnHtml = `<button onclick="buyOutfit('${key}')" class="btn-gold w-full py-2 rounded-xl text-xs">🪙 ${toBengaliNumber(item.price)} কয়েনে আনলক করুন</button>`;
+                }
+
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between mb-1.5">
+                            <span class="w-6 h-6 rounded-full border border-white/50" style="background:${item.robeColor}"></span>
+                            <span class="text-xs text-amber-300 font-bold">${isUnlocked ? 'আনলকড' : toBengaliNumber(item.price) + ' কয়েন'}</span>
+                        </div>
+                        <h4 class="font-bold text-amber-200 text-sm sm:text-base mb-1">${item.name}</h4>
+                        <p class="text-xs text-emerald-100/80 mb-3">${item.desc}</p>
+                    </div>
+                    ${btnHtml}
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function buyOutfit(key) {
+            const item = outfitsConfig[key];
+            const notice = document.getElementById('shopFeedbackNotice');
+            if (!item || playerData.unlockedOutfits.includes(key)) return;
+            if (playerData.coins >= item.price) {
+                if (notice) notice.classList.add('hidden');
+                playerData.coins -= item.price;
+                playerData.unlockedOutfits.push(key);
+                playerData.equippedOutfit = key;
+                savePlayerData();
+                playWinSound();
+                renderRewardsShop();
+            } else {
+                playBadSound();
+                if (notice) {
+                    notice.textContent = 'পর্যাপ্ত নেকী কয়েন নেই! আরও গেম, কুইজ বা চ্যালেঞ্জ খেলে কয়েন সংগ্রহ করুন।';
+                    notice.classList.remove('hidden');
+                }
+            }
+        }
+
+        function equipOutfit(key) {
+            if (!playerData.unlockedOutfits.includes(key)) return;
+            playerData.equippedOutfit = key;
+            savePlayerData();
+            playCollectSound();
+            renderRewardsShop();
+        }
+
+        function handleNextAction() {
+            if (lastModePlayed === 'adventure') {
+                if (lastLevelWon && currentLevel < 3) startAdventureMode(currentLevel + 1);
+                else startAdventureMode(1);
+            } else if (lastModePlayed === 'match') {
+                startMatchChallenge();
+            } else {
+                startAdventureMode(1);
+            }
+        }
+
+        function toBengaliNumber(num) {
+            const bnDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            return String(num).replace(/\d/g, d => bnDigits[d]);
+        }
+
+        // Load saved progress on startup
+        loadPlayerData();
+    </script>
+</body>
+</html>
